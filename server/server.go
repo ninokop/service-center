@@ -13,7 +13,10 @@
 //limitations under the License.
 package server
 
-import _ "github.com/ServiceComb/service-center/server/service/event"
+import (
+	_ "github.com/ServiceComb/service-center/pkg/metrics"
+	_ "github.com/ServiceComb/service-center/server/service/event"
+)
 import (
 	"fmt"
 	ssl "github.com/ServiceComb/service-center/pkg/tlsutil"

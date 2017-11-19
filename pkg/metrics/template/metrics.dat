@@ -1,0 +1,10 @@
+{                               
+    "plugin_id":"{{.PluginID}}",    
+    "metric":{
+        "node": "{{.MetricsSource}}",     
+        "scope_name": "{{.ScopeName}}",    
+        "timestamp": "{{.TimeStamp}}",     
+        "inface_name": "{{.InfaceName}}",  
+        "{{.MetricsKey}}": "{{.MetricsValue}}",         
+    }
+}

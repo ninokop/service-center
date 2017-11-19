@@ -71,6 +71,12 @@ func (this *ROAServerHandler) addRoute(route *Route) (err error) {
 }
 
 func (this *ROAServerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("####### roa server handler #############", r.Method, r.URL.Path)
+	defer func() {
+		fmt.Println("######## code #####", w.Header())
+		reportRequestReceived(r.Method, w.Header())
+	}()
+
 	for _, ph := range this.handlers[r.Method] {
 		if params, ok := ph.try(r.URL.Path); ok {
 			if len(params) > 0 {
